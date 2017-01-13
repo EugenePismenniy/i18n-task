@@ -9,5 +9,5 @@ public interface TimeDayDefiner {
 	/**
 	 * @param currentTime current time in milliseconds
 	 * */
-	TimeDay difineTimeDay(long currentTime);
+	TimeDay defineTimeDay(long currentTime);
 }
