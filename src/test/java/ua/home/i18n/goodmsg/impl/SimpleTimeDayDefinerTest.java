@@ -19,7 +19,7 @@ import static org.junit.Assert.assertNotNull;
 @RunWith(Parameterized.class)
 public class SimpleTimeDayDefinerTest {
 
-	TimeDayDefiner timeDayDefiner;
+	TimeDayDefiner timeDayDefiner = new SimpleTimeDayDefiner();
 
 	@Parameterized.Parameter(0)
 	public TimeDay expectedTimeDay;
