@@ -1,5 +1,6 @@
 ### IntelliJ IDEA
 !.gitignore
+!.travis.yml
 .idea/
 target/
 *.iml
