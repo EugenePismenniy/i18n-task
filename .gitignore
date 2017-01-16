@@ -3,6 +3,7 @@
 .idea/
 target/
 *.iml
+*.log
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Java template
