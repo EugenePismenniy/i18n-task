@@ -1,5 +1,7 @@
 package ua.home.i18n.goodmsg.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ua.home.i18n.goodmsg.TimeDay;
 import ua.home.i18n.goodmsg.TimeDayDefiner;
 
@@ -12,6 +14,7 @@ import static ua.home.i18n.goodmsg.TimeDay.*;
  */
 public class SimpleTimeDayDefiner implements TimeDayDefiner {
 
+	private static final Logger log = LoggerFactory.getLogger(SimpleTimeDayDefiner.class);
 
     @Override
     public TimeDay defineTimeDay(long currentTime) {
@@ -20,6 +23,8 @@ public class SimpleTimeDayDefiner implements TimeDayDefiner {
         date.setTimeInMillis(currentTime);
 
         int hour = date.get(Calendar.HOUR_OF_DAY);
+
+		log.debug("currentTime = {}, hour = {}", currentTime, hour);
 
         if (hour >= 6 && hour < 9) {
             return MORNING;

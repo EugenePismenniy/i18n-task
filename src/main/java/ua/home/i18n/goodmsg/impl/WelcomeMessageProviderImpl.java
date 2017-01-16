@@ -1,5 +1,7 @@
 package ua.home.i18n.goodmsg.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ua.home.i18n.goodmsg.TimeDay;
 import ua.home.i18n.goodmsg.WelcomeMessageProvider;
 
@@ -12,6 +14,8 @@ import java.util.ResourceBundle;
  */
 public class WelcomeMessageProviderImpl implements WelcomeMessageProvider {
 
+	private static final Logger log = LoggerFactory.getLogger(WelcomeMessageProviderImpl.class);
+
     private final String resourcePrefixName;
 
     public WelcomeMessageProviderImpl(String resourcePrefixName) {
@@ -20,6 +24,9 @@ public class WelcomeMessageProviderImpl implements WelcomeMessageProvider {
 
     @Override
     public String getMessage(TimeDay timeDay, Locale locale) {
+
+		log.debug("resourcePrefixName = '{}', timeDay = '{}', locale = '{}'", resourcePrefixName, timeDay, locale);
+
         ResourceBundle resource = ResourceBundle.getBundle(this.resourcePrefixName, locale);
         String message = resource.getString(timeDay.name());
         return convertMessage(message);
